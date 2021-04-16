@@ -1,0 +1,39 @@
+# C:\Users\admin\Desktop\rotation\Python_assignment\caulobacterNA1000.fasta
+# C:\Users\admin\Desktop\rotation\Python_assignment\EcoliK12.fasta
+# C:\Users\admin\Desktop\rotation\Python_assignment\EcoliO157.fasta
+# C:\Users\admin\Desktop\rotation\Python_assignment\Homo sapiens chromosome 21.fasta
+
+from itertools import islice
+import pandas as pd
+dna_seq = []
+k= 2
+with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\EcoliO157.fasta','r') as f1:
+    for line in islice(f1, 1, None):
+        line=line.strip('\n')
+        dna_seq = dna_seq + list(line)
+k2 = []
+i = 0 
+while i <= len(dna_seq)-k:
+    j = i + k
+    di = dna_seq[i:j]
+    di = ''.join(di)
+    k2.append(di)
+    i += 1 
+    if i > len(dna_seq)-k:
+        break
+
+df = pd.value_counts(k2)
+df = pd.DataFrame({'di-num':df.index, 'Fre':df.values})
+fre = df['Fre'].tolist()
+a = 0 
+for i in fre:
+    a += i
+fre = df['Fre'].tolist()
+per = []
+for f in fre:
+    f /= a
+    f *= 100
+    per.append(f)
+df['%'] = per
+with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\4-O157dinulc.csv",'w+',newline='') as nf:
+    df.to_csv(nf,index=False)
