@@ -1,6 +1,6 @@
 import pandas as pd
 from itertools import islice
-
+import os
 # for a sequence
 # dna_seq = list(input("input dnaseq:"))
 
@@ -40,5 +40,8 @@ for f in fre:
     per.append(f)
 df['%'] = per
 print(df)
-with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\6-knulc.csv",'w+',newline='') as nf:
+
+#os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.chdir(os.path.dirname(path))
+with open(r".\knulc.csv",'w+',newline='') as nf:
     df.to_csv(nf,index=False)
