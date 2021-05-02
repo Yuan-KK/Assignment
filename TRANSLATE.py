@@ -1,5 +1,6 @@
 from itertools import islice
 from pandas import DataFrame
+import tempfile
 import argparse
 codon = {'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
@@ -23,13 +24,16 @@ parser .add_argument("-i","--input",type=str,metavar='',help="Input .fasta")
 parser.add_argument("-o","--output",type=str,metavar='',help="Output .fasta")
 args = parser.parse_args()
 
-path = args.input
-dna_seq = []
-with open(path,'r') as f1:
-    for line in islice(f1, 1, None):
-        line=line.strip('\n')
-        dna_seq = dna_seq + list(line)
 
+with open(args.input,'r') as f1:
+    with tempfile.TemporaryFile(mode='r+t') as f2:
+        for line in islice(f1, 1, None):
+            line=line.strip('\n')
+            f2.writelines(line)
+        f2.seek(0)
+        line=f2.read()
+        dna_seq = list(line)
+        
 k= 3
 kmers = []
 start = []
