@@ -1,7 +1,6 @@
 from itertools import islice
 from pandas import DataFrame
-import numpy as np
-
+import argparse
 codon = {'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
     'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
@@ -18,11 +17,13 @@ codon = {'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
     'TAC':'Y', 'TAT':'Y', 'TAA':'stop', 'TAG':'stop',
     'TGC':'C', 'TGT':'C', 'TGA':'stop', 'TGG':'W'}
-# for a sequence
-# dna_seq = list(input("input dnaseq:"))
 
-# for a fasta file
-path = r'C:\Users\admin\Desktop\rotation\Python_assignment\caulobacterNA1000.fasta'
+parser = argparse.ArgumentParser(usage='python TRANSLATE.py -i read.fasta -o output.csv')
+parser .add_argument("-i","--input",type=str,metavar='',help="Input .fasta")
+parser.add_argument("-o","--output",type=str,metavar='',help="Output .fasta")
+args = parser.parse_args()
+
+path = args.input
 dna_seq = []
 with open(path,'r') as f1:
     for line in islice(f1, 1, None):
@@ -62,4 +63,4 @@ aalist = aalist[:-1]
 pro_df={"startsite" : start,
    "pro" : aalist}
 pro_df = DataFrame(pro_df)
-pro_df.to_csv(r'C:\Users\admin\Desktop\rotation\Python_assignment\3-translate.csv', encoding='utf_8_sig')
+pro_df.to_csv(args.output, encoding='utf_8_sig')
