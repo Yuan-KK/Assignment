@@ -1,5 +1,4 @@
 from itertools import islice
-import os
 import tempfile
 import argparse
 comp = {'A':'T','G':'C','C':'G','T':'A','N':'N','R':'Y','Y':'R', \
