@@ -1,16 +1,24 @@
 from itertools import islice
-
-with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\caulobacterNA1000.fasta','r') as f1:
-    with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\2-NA1000.txt','w') as f2:
+import os
+import tempfile
+import argparse
+comp = {'A':'T','G':'C','C':'G','T':'A','N':'N','R':'Y','Y':'R', \
+    'M':'K','K':'M','S':'W','W':'S','H':'D','B':'V','V':'B','D':'H'}
+parser = argparse.ArgumentParser(usage='python COMPLEMENT.py -i read.fasta -o output.fasta')
+parser.add_argument("-i","--input",type=str,metavar='',help="Input .fasta")
+parser.add_argument("-o","--output",type=str,metavar='',help="Output .fasta")
+args = parser.parse_args()
+with open(args.input,'r') as f1:
+    with tempfile.TemporaryFile(mode='r+t') as f2:
         for line in islice(f1, 1, None):
             line=line.strip('\n')
             f2.writelines(line)
-
-f=open(r'C:\Users\admin\Desktop\rotation\Python_assignment\2-NA1000.txt','r')
-line=f.read()
-transline=line[::-1].replace('A','t').replace('T','a').replace('G','c').replace('C','g').upper()
-f.close()
-
-f_new=open(r'C:\Users\admin\Desktop\rotation\Python_assignment\2-NA1000comp.txt','w')
-f_new.write(transline)
-f_new.close()
+        f2.seek(0)
+        line=f2.read()
+        dna_seq = list(line)
+        dna_seq = [comp[base] for base in dna_seq]
+        string = ''.join(dna_seq)
+        string =string [::-1]
+        f_new=open(args.output,'w')
+        f_new.write(string)
+        f_new.close()
