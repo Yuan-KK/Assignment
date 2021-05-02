@@ -1,5 +1,9 @@
-PATH = input("input path:")
-f = open (PATH,"r")
+import argparse
+parser = argparse.ArgumentParser(usage='python LENGHT.py -i read.fasta')
+parser.add_argument("-i","--input",type=str,metavar='',help="Input .fasta")
+args = parser.parse_args()
+
+f = open (args.input,"r")
 base_num = 0
 for line in f:
     if ">" not in line :
