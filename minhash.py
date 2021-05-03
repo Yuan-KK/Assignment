@@ -5,7 +5,7 @@ import argparse
 from func import fastalist
 from func import kmersset
 
-parser = argparse.ArgumentParser(usage='python minhash.py -k <int> -t <int> -i "read1.fasta read2.fasta read3.fasta"')
+parser = argparse.ArgumentParser(usage='python minhash.py -k <int> -t <int> -i "read1.fasta read2.fasta ..." -o output.png')
 parser.add_argument("-k","--kmer",type=int,metavar='',default=15,help="Set the length of k-mer")
 parser.add_argument("-t","--times",type=int,metavar='',default=100,help="Set the times of running hash function")
 parser.add_argument("-i","--input",type=str,metavar='',required=True,help="Input .fasta files in the form of a string with spaces separating")
