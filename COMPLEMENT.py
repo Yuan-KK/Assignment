@@ -3,7 +3,7 @@ import tempfile
 import argparse
 comp = {'A':'T','G':'C','C':'G','T':'A','N':'N','R':'Y','Y':'R', \
     'M':'K','K':'M','S':'W','W':'S','H':'D','B':'V','V':'B','D':'H'}
-parser = argparse.ArgumentParser(usage='python COMPLEMENT.py -i read.fasta -o output.txt')
+parser = argparse.ArgumentParser(usage='python COMPLEMENT.py -i read.fasta [-o output.txt]')
 parser.add_argument("-i","--input",type=str,metavar='',required=True,help="Input a .fasta file")
 parser.add_argument("-o","--output",type=str,metavar='',default='output.txt',help="Output a .txt file")
 args = parser.parse_args()
