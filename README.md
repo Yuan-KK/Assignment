@@ -43,12 +43,12 @@ The `output.fasta` shows all the possible results of translating DNA chains into
 python kmers_counter.py -k <int> -i read.fasta [-o output.csv]
 ```
 ### *K* = 2
-> count the occurrences of all di-nucleotides in each of the file.
+> Count the occurrences of all di-nucleotides.
 ```
 python kmers_counter.py -k 2 -i read.fasta -o DINULC.csv
 ```
 ### *K* = 3
-> count the occurrences of all tri-nucleotides in each of the file.
+> Count the occurrences of all tri-nucleotides.
 ```
 python kmers_counter.py -k 3 -i read.fasta -o TRINULC.csv
 ```
