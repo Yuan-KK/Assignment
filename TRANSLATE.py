@@ -49,7 +49,7 @@ while i <= len(dna_seq)-k:
 
 aa = []
 stratsite = []
-for l  in start:
+for l in start:
     while l <= len(dna_seq)-k:
         n = l + k
         tri = dna_seq[l:n]
@@ -66,7 +66,6 @@ aalist = aa.split('\n')
 aalist = aalist[:-1]
 pro_df={"startsite" : start,
    "pro" : aalist}
-pro_df = DataFrame(pro_df)
-pro_df.to_csv(args.output, encoding='utf_8_sig')
-with open(args.output,'w+',newline='') as nf:
-    df.to_csv(nf,index=False)
+with open(args.output,'w+',newline='') as f:
+    for i in range(len(start)):
+        f.write('>startsite '+str(start[i])+'\n'+aalist[i]+'\n')
