@@ -59,6 +59,7 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```
 ### MinHash
 > MinHash is an approximate algorithm that used to estimate genome distance by calculating presence-based distances.
+
 **Jaccard distance**
 > Jaccard distance is used to describe the dissimilarity between sets.
 
