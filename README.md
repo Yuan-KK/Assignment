@@ -1,11 +1,11 @@
 This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers produced from genomes. It includes these functions as follows:
-- Count the base number
-- Get the complementary strand
-- Translate the DNA sequence
-- *K*-mer counter
-- Compare genome similarity
-  - Bray–Curtis dissimilarity
-  - MinHash
+- [Count the base number](https://github.com/Yuan-KK/Assignment/blob/main/README.md#1count-the-base-number)
+- [Get the complementary strand](https://github.com/Yuan-KK/Assignment/blob/main/README.md#2get-the-complementary-strand)
+- [Translate the DNA sequence](https://github.com/Yuan-KK/Assignment/blob/main/README.md#3translate-the-dna-sequence)
+- [*K*-mer counter](https://github.com/Yuan-KK/Assignment/blob/main/README.md#4k-mer-counter)
+- [Compare genome similarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#5compare-genome-similarity)
+  - [Bray–Curtis dissimilarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#braycurtis-dissimilarity)
+  - [MinHash](https://github.com/Yuan-KK/Assignment/blob/main/README.md#minhash)
 # 1.Count the base number.
 [`Length.py`](https://github.com/Yuan-KK/Assignment/blob/main/LENGTH.py) is the program to count how many DNA bases in a `.fasta` file.
 
@@ -52,7 +52,7 @@ python kmers_counter.py -k 2 -i read.fasta -o DINULC.csv
 ```
 python kmers_counter.py -k 3 -i read.fasta -o TRINULC.csv
 ```
-# Compare genome similarity.
+# 5.Compare genome similarity.
 ### Bray–Curtis dissimilarity
 The Bray–Curtis dissimilarity is a statistic used to quantify the compositional dissimilarity between two different sites, based on counts at each site. The index of dissimilarity is:
 
