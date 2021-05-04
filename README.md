@@ -94,7 +94,8 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 
 ![Jaccard distance](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504110402.svg)
 
-[`minhash.py`](https://github.com/Yuan-KK/Assignment/blob/main/minhash.py) is the program to calculate the compositional dissimilarity between pairs of site.
+[`minhash.py`](https://github.com/Yuan-KK/Assignment/blob/main/minhash.py) is the program to calculate the approximate distance between pairs of site.
+
 **Usage:**
 ```sh
 python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
