@@ -1,5 +1,12 @@
 This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers produced from genomes. It includes these functions as follows:
-# Count the base number.
+- Count the base number
+- Get the complementary strand
+- Translate the DNA sequence
+- *K*-mer counter
+- Compare genome similarity
+  - Bray–Curtis dissimilarity
+  - MinHash
+# 1.Count the base number.
 [`Length.py`](https://github.com/Yuan-KK/Assignment/blob/main/LENGTH.py) is the program to count how many DNA bases in a `.fasta` file.
 
 **Usage:**
@@ -11,14 +18,14 @@ python LENGHT.py -i read.fasta
 $ python LENGTH.py -i ~/python/test/EcoliK12.fasta 
 4641652
 ```
-# Get the complementary strand.
+# 2.Get the complementary strand.
 `COMPLEMENT.py` is the program to output the complementary strand of the DNA sequence.
 
 **Usage:**
 ```sh
 python COMPLEMENT.py -i read.fasta [-o output.txt]
 ```
-# Translate the DNA sequence.
+# 3.Translate the DNA sequence.
 `TRANSLATE.py` is the program to translate a DNA sequence to a protein sequence using the standard codon table.
 
 **Usage:**
@@ -26,7 +33,7 @@ python COMPLEMENT.py -i read.fasta [-o output.txt]
 python TRANSLATE.py -i read.fasta [-o output.fasta]
 ```
 The `output.fasta` shows all the possible results of translating DNA chains into polypeptide chains.
-# *K*-mer counter
+# 4.*K*-mer counter
 *K*-mers are substrings of length *k* contained within a biological sequence. *K*-mers analysis is ubiquitous in biological sequence analysis and is among the first steps of processing pipelines for a wide spectrum of applications, including de novo assembly, error correction, repeat detection, genome comparison, digital normalization, RNA-seq quantification, metagenomic reads classification and binning, fast search-by-sequence over large high-throughput sequencing repositories.
 
 [`kmers_counter.py`](https://github.com/Yuan-KK/Assignment/blob/main/kmers_counter.py)
