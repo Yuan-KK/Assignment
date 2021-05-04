@@ -19,7 +19,7 @@ codon = {'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'TAC':'Y', 'TAT':'Y', 'TAA':'stop', 'TAG':'stop',
     'TGC':'C', 'TGT':'C', 'TGA':'stop', 'TGG':'W'}
 
-parser = argparse.ArgumentParser(usage='python TRANSLATE.py -i read.fasta -o output.fasta')
+parser = argparse.ArgumentParser(usage='python TRANSLATE.py -i read.fasta [-o output.fasta]')
 parser .add_argument("-i","--input",type=str,metavar='',required=True,help="Input a .fasta file")
 parser.add_argument("-o","--output",type=str,metavar='',default='output.fasta',help="Output a .fasta file")
 args = parser.parse_args()
