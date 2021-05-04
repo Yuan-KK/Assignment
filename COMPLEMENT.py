@@ -19,5 +19,6 @@ with open(args.input,'r') as f1:
         string = ''.join(dna_seq)
         string =string [::-1]
         f_new=open(args.output,'w')
+        f_new.write(">"+args.input.split('.')[0]+"\n")
         f_new.write(string)
         f_new.close()
