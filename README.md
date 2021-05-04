@@ -4,8 +4,8 @@ This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers
 - [Translate the DNA sequence](https://github.com/Yuan-KK/Assignment/blob/main/README.md#3translate-the-dna-sequence)
 - [*K*-mer counter](https://github.com/Yuan-KK/Assignment/blob/main/README.md#4k-mer-counter)
 - [Compare genome similarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#5compare-genome-similarity)
-  - [Bray–Curtis dissimilarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#braycurtis-dissimilarity)
-  - [MinHash](https://github.com/Yuan-KK/Assignment/blob/main/README.md#minhash)
+  - [Bray–Curtis dissimilarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#51-braycurtis-dissimilarity)
+  - [MinHash](https://github.com/Yuan-KK/Assignment/blob/main/README.md#52-minhash)
 # 1.Count the base number.
 [`Length.py`](https://github.com/Yuan-KK/Assignment/blob/main/LENGTH.py) is the program to count how many DNA bases in a `.fasta` file.
 
