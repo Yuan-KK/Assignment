@@ -100,3 +100,9 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```sh
 python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```
+### 5.3 Results
+***K*=2**
+
+
+***K*=3**
+![BC K=3](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504221148.png)
