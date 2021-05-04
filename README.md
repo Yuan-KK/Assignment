@@ -75,7 +75,7 @@ $ python kmers_counter.py -k 3 -i ~/python/test/EcoliK12.fasta -o TRINULC.csv
 ```
 # 5.Compare genome similarity.
 In this part, I use two different standards to quantify the similarity between two genomes.
-### Bray–Curtis dissimilarity
+### 5.1 Bray–Curtis dissimilarity
 The Bray–Curtis dissimilarity is a statistic used to quantify the compositional dissimilarity between two different sites, based on counts at each site. The index of dissimilarity is:
 
 ![Bray–Curtis dissimilarity](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504185804.jpeg)
@@ -86,7 +86,7 @@ The Bray–Curtis dissimilarity is a statistic used to quantify the compositiona
 ```sh
 python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```
-### MinHash
+### 5.2 MinHash
 > > MinHash is an approximate algorithm that used to estimate genome distance by calculating Jaccard distances. For detailed principles, please refer to https://blog.csdn.net/liujan511536/article/details/47729721.
 
 **Jaccard distance**
