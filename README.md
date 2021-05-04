@@ -57,4 +57,9 @@ The Bray–Curtis dissimilarity is a statistic used to quantify the compositiona
 ```
 python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```
-### [MinHash](https://github.com/Yuan-KK/Assignment/wiki/MinHash)
+### MinHash
+> MinHash is an approximate algorithm that used to estimate genome distance by calculating presence-based distances.
+**Jaccard distance**
+> Jaccard distance is used to describe the dissimilarity between sets.
+
+![Jaccard distance](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504110402.svg)
