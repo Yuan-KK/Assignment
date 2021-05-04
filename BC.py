@@ -19,10 +19,10 @@ for i in range(l):
 for i in range(l):
     df_dic[alist[i]]=pd.DataFrame(kmercounter(fastalist(data[i]),k))
 
-dfn = pd.merge(df_dic[alist[0]],df_dic[alist[1]],on='k-num',how='outer')
+df = pd.merge(df_dic[alist[0]],df_dic[alist[1]],on='k-num',how='outer')
 i = 2
 while i < l:
-    df = pd.merge(dfn,df_dic[alist[i]],on='k-num',how='outer')
+    df = pd.merge(df,df_dic[alist[i]],on='k-num',how='outer')
     i += 1
 df = df.fillna(0)
 namelist=alist[:]
