@@ -102,6 +102,7 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ```
 ### 5.3 Results
 ***K*=2, Bray–Curtis dissimilarity**
+![BC K=3](D:/Xftp/Temporary/BC2-4%20%5B3%5D.png)
 
 ***K*=2, Jaccard distance**
 
