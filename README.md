@@ -103,12 +103,6 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 ### 5.3 Results
 ***K*=2, Bray–Curtis dissimilarity**
 
-
-***K*=2, Jaccard distance**
-
 ***K*=3, Bray–Curtis dissimilarity**
 
 ![BC K=3](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504221148.png)
-
-
-***K*=3, Jaccard distance**
