@@ -99,9 +99,8 @@ if __name__ == '__main__':
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-plt.figure(dpi=120)
-sns.heatmap(data=df_com,annot=True, linewidths=.5,
+sns.clustermap(data=df_com,annot=True, linewidths=.5,figsize=(6, 7),row_cluster=False, \
+    dendrogram_ratio=(.1, .2),cbar_pos=(0.01, .2, .03, .4), \
             cmap=sns.diverging_palette(10, 220, sep=80, n=7))
-plt.title("Jaccard Similarity")
 plt.savefig(args.output)
 plt.show()
