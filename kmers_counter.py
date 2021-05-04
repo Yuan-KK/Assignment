@@ -3,7 +3,7 @@ from itertools import islice
 import tempfile
 import argparse
 
-parser = argparse.ArgumentParser(usage='python kmers_counter.py -k <int> -i read.fasta -o output.csv')
+parser = argparse.ArgumentParser(usage='python kmers_counter.py -k <int> -i read.fasta [-o output.csv]')
 parser.add_argument("-k","--kmer",type=int,metavar='',required=True,help="Set the length of k-mer")
 parser .add_argument("-i","--input",type=str,metavar='',required=True,help="Input .fasta file")
 parser.add_argument("-o","--output",type=str,metavar='',default='output.csv',help="Output .csv file")
