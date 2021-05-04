@@ -31,7 +31,7 @@ while i <= len(dna_seq)-k:
         break
 
 df = pd.value_counts(kmers)
-df = pd.DataFrame({'k-mer':df.index, 'Fre':df.values})
+df = pd.DataFrame({'k-num':df.index, 'Fre':df.values})
 
 fre = df['Fre'].tolist()
 a = 0 
