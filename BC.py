@@ -3,7 +3,7 @@ import argparse
 from func import fastalist
 from func import kmercounter
 from func import BCd
-parser = argparse.ArgumentParser(usage='python BC.py -k <int> -i "read1.fasta read2.fasta ..." -o output.png')
+parser = argparse.ArgumentParser(usage='python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]')
 parser.add_argument("-k","--kmer",type=int,metavar='',required=True,help="Set the length of k-mer")
 parser.add_argument("-i","--input",type=str,metavar='',help="Input .fasta file in the form of a string with spaces separating")
 parser.add_argument("-o","--output",type=str,metavar='',default='BC.png',help="Output a heatmap")
