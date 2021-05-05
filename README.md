@@ -92,7 +92,7 @@ optional arguments:
   -o , --output   Output a heatmap
 ```
 ### 5.2 MinHash
-> MinHash is an indirect that used to estimate genome distance by calculating Jaccard distances. For detailed principles, please refer to https://blog.csdn.net/liujan511536/article/details/47729721.
+> MinHash is an indirect way that used to estimate genome distance by calculating Jaccard distances. For detailed principles, please refer to https://blog.csdn.net/liujan511536/article/details/47729721.
 
 **Jaccard distance**
 > Jaccard distance is used to describe the dissimilarity between sets. It compares members for two sets to see which members are shared and which are distinct.
