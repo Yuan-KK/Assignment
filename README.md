@@ -82,9 +82,14 @@ The Bray–Curtis dissimilarity is a statistic used to quantify the compositiona
 
 [`BC.py`](https://github.com/Yuan-KK/Assignment/blob/main/BC.py) is the program to calculate the compositional dissimilarity between pairs of site.
 
-**Usage:**
 ```sh
-python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
+Usage: python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -k , --kmer     Set the length of k-mer
+  -i , --input    Input .fasta files in the form of a string with spaces separating
+  -o , --output   Output a heatmap
 ```
 ### 5.2 MinHash
 > MinHash is an approximate algorithm that used to estimate genome distance by calculating Jaccard distances. For detailed principles, please refer to https://blog.csdn.net/liujan511536/article/details/47729721.
@@ -96,9 +101,15 @@ python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
 
 [`minhash.py`](https://github.com/Yuan-KK/Assignment/blob/main/minhash.py) is the program to calculate the approximate distance between pairs of site.
 
-**Usage:**
 ```sh
-python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]
+Usage: python minhash.py -k <int> -t <int> i "read1.fasta read2.fasta ..." [-o output.png]
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -k , --kmer     Set the length of k-mer
+  -t , --times    Set the times of running hash function
+  -i , --input    Input .fasta files in the form of a string with spaces separating
+  -o , --output   Output a heatmap
 ```
 ### 5.3 Results
 ***K*=2, Bray–Curtis dissimilarity**
