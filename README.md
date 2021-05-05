@@ -128,3 +128,5 @@ optional arguments:
 ***K*=21, Bray–Curtis dissimilarity**
 
 ![BC K=21](https://gitee.com/yuan-keke/runoob-test/raw/master/20210505141408.png)
+
+In order to get an accurate comparison result, it is essential to choose an appropriate value of *k*. If the *k*  value is too small, such as 2, or too large, such as 21, the result will be inaccurate.
