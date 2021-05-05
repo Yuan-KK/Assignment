@@ -115,6 +115,7 @@ optional arguments:
 ***K*=2, Bray–Curtis dissimilarity**
 
 ![BC K=2](https://gitee.com/yuan-keke/runoob-test/raw/master/20210505100058.png)
+
 ***K*=3, Bray–Curtis dissimilarity**
 
 ![BC K=3](https://gitee.com/yuan-keke/runoob-test/raw/master/20210504221148.png)
