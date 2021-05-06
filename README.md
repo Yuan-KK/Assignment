@@ -34,7 +34,7 @@ python TRANSLATE.py -i read.fasta [-o output.fasta]
 ```
 The `output.fasta` shows all the possible results of translating DNA chains into polypeptide chains.
 # 4.*K*-mer counter
-*K*-mers are substrings of length *k* contained within a biological sequence. *K*-mers analysis is ubiquitous in biological sequence analysis and is among the first steps of processing pipelines for a wide spectrum of applications, including de novo assembly, error correction, repeat detection, genome comparison, digital normalization, RNA-seq quantification, metagenomic reads classification and binning, fast search-by-sequence over large high-throughput sequencing repositories.
+*K*-mers are substrings of length *k* contained within a biological sequence. *K*-mers analysis is ubiquitous in biological sequence analysis and is among the first steps of processing pipelines for a wide spectrum of applications, including de novo assembly, error correction, repeat detection, genome comparison, RNA-seq quantification, metagenomic reads classification and binning, fast search-by-sequence over large high-throughput sequencing repositories.
 
 [`kmers_counter.py`](https://github.com/Yuan-KK/Assignment/blob/main/kmers_counter.py) is the program to count *k*-mers' species and frequency. 
 
