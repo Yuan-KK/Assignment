@@ -124,9 +124,14 @@ optional arguments:
 
 ![BC K=8](https://gitee.com/yuan-keke/runoob-test/raw/master/20210505141416.png)
 
-
 ***K*=21, Bray–Curtis dissimilarity**
 
 ![BC K=21](https://gitee.com/yuan-keke/runoob-test/raw/master/20210505141408.png)
 
-In order to get an accurate comparison result, it is essential to choose an appropriate value of *k*. If the *k*  value is too small, such as 2, or too large, such as 21, the result will be inaccurate.
+In order to get an accurate comparison result, it is essential to choose an appropriate value of *k*. If the *k* value is too small, such as 2, or too large, such as 21, the result will be inaccurate.
+
+***K*=21, MinHash**
+
+![JS k=12](https://gitee.com/yuan-keke/runoob-test/raw/master/20210506151125.png)
+
+MinHash is not suitable for situations where the *k* value is too small or the genomes with low similarity.
