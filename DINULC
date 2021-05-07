@@ -25,19 +25,23 @@ while i <= len(dna_seq)-k:
     i += 1 
     if i > len(dna_seq)-k:
         break
+kmers = { }
+i = 0 
+while i <= len(dna_seq)-k:
+    j = i + k
+    di = dna_seq[i:j]
+    if di not in kmers.keys():
+        kmers[di] = 1
+    if di in kmers.keys():
+        kmers[di] += 1
+    i += 1 
+    if i > len(dna_seq)-k:
+        break
 
-df = pd.value_counts(k2)
-df = pd.DataFrame({'di-num':df.index, 'Fre':df.values})
-fre = df['Fre'].tolist()
-a = 0 
-for i in fre:
-    a += i
-fre = df['Fre'].tolist()
-per = []
-for f in fre:
-    f /= a
-    f *= 100
-    per.append(f)
-df['%'] = per
+df = pd.DataFrame([kmers])
+df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
+df = df.reset_index().rename(columns = {'index':'k-num'})
+df.sort_values("Fre",inplace=True,ascending=False)
+df['%'] = df["Fre"] / df["Fre"].sum() * 100
 with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\O157dinulc.csv",'w+',newline='') as nf:
     df.to_csv(nf,index=False)
