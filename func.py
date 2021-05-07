@@ -2,41 +2,35 @@ import pandas as pd
 from itertools import islice
 import tempfile
 
-def fastalist(path):
+def fastaline(path):
     with open(path,'r') as f1:
         with tempfile.TemporaryFile(mode='r+t') as f2:
             for line in islice(f1, 1, None):
                 line=line.strip('\n')
                 f2.writelines(line)
             f2.seek(0)
-            line=f2.read()
-            dna_seq = list(line)
+            dna_seq=f2.read()
     return dna_seq
 
 def kmercounter(dna_seq,k):
-    kmers = []
+    kmers = { }
     i = 0 
     while i <= len(dna_seq)-k:
         j = i + k
-        kmer = dna_seq[i:j]
-        kmer = ''.join(kmer)
-        kmers.append(kmer)
+        di = dna_seq[i:j]
+        if di not in kmers.keys():
+            kmers[di] = 1
+        if di in kmers.keys():
+            kmers[di] += 1
         i += 1 
         if i > len(dna_seq)-k:
             break
-    df = pd.value_counts(kmers)
-    df = pd.DataFrame({'k-num':df.index, 'Fre':df.values})
-    fre = df['Fre'].tolist()
-    a = 0 
-    for i in fre:
-        a += i
-    fre = df['Fre'].tolist()
-    per = []
-    for f in fre:
-        f /= a
-        f *= 100
-        per.append(f)
-    df['%'] = per
+
+    df = pd.DataFrame([kmers])
+    df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
+    df = df.reset_index().rename(columns = {'index':'k-num'})
+    df.sort_values("Fre",inplace=True,ascending=False)
+    df['%'] = df["Fre"] / df["Fre"].sum() * 100
     df.drop('Fre', axis=1,inplace = True)
     return df
 
