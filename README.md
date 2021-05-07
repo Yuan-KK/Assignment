@@ -11,7 +11,7 @@ This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers
 
 **Usage:**
 ```sh
-python LENGHT.py -i read.fasta
+python LENGTH.py -i read.fasta
 ```
 **Example:**
 ```sh
