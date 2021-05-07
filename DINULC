@@ -5,12 +5,17 @@
 
 from itertools import islice
 import pandas as pd
+import tempfile
+
 dna_seq = []
 k= 2
 with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\EcoliO157.fasta','r') as f1:
-    for line in islice(f1, 1, None):
-        line=line.strip('\n')
-        dna_seq = dna_seq + list(line)
+    with tempfile.TemporaryFile(mode='r+t') as f2:
+        for line in islice(f1, 1, None):
+            line=line.strip('\n')
+            f2.writelines(line)
+        f2.seek(0)
+        dna_seq=f2.read()
 k2 = []
 i = 0 
 while i <= len(dna_seq)-k:
@@ -35,5 +40,5 @@ for f in fre:
     f *= 100
     per.append(f)
 df['%'] = per
-with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\4-O157dinulc.csv",'w+',newline='') as nf:
+with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\O157dinulc.csv",'w+',newline='') as nf:
     df.to_csv(nf,index=False)
