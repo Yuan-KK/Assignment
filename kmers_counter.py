@@ -8,7 +8,6 @@ parser = argparse.ArgumentParser(usage='python kmers_counter.py -k <int> -i read
 parser.add_argument("-k","--kmer",type=int,metavar='',required=True,help="Set the length of k-mer")
 parser .add_argument("-i","--input",type=str,metavar='',required=True,help="Input a .fasta file")
 parser.add_argument("-o","--output",type=str,metavar='',default='output.csv',help="Output a .csv file")
-# parser.add_argument("--hist",type=str,metavar='',default='hist.png',help="Output a histogram")
 args = parser.parse_args()
 
 k = args.kmer
@@ -34,8 +33,11 @@ while i <= len(dna_seq)-k:
         break
 
 df = pd.DataFrame([kmers])
-df = pd.DataFrame(df.values.T, index=df.columns, columns=['Fre'])
+df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
+df = df.reset_index().rename(columns = {'index':'k-num'})
+print(df)
 df.sort_values("Fre",inplace=True,ascending=False)
+print(df)
 df['%'] = df["Fre"] / df["Fre"].sum() * 100
 
 with open(args.output,'w+',newline='') as nf:
