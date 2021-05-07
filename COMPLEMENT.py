@@ -14,10 +14,9 @@ with open(args.input,'r') as f1:
             f2.writelines(line)
         f2.seek(0)
         line=f2.read()
-        dna_seq = list(line)
-        dna_seq = [comp[base] for base in dna_seq]
+        dna_seq = [comp[base] for base in line]
         string = ''.join(dna_seq)
-        string =string [::-1]
+        string = string [::-1]
         f_new=open(args.output,'w')
         f_new.write(">"+args.input.split('.')[0]+"\n")
         f_new.write(string)
