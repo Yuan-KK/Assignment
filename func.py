@@ -44,15 +44,14 @@ def BCd(list1,list2):
     dissimilarity = 1 - 2 * C / ( sum1 + sum2 )
     return dissimilarity
 
-def kmersset(dnalist,k):
+def kmersset(dnaline,k):
     S = set()
     i = 0 
-    while i <= len(dnalist)-k:
+    while i <= len(dnaline)-k:
         j = i + k
-        di = dnalist[i:j]
-        di = ''.join(di)
+        di = dnaline[i:j]
         S.add(di)
         i += 1 
-        if i > len(dnalist)-k:
+        if i > len(dnaline)-k:
             break
     return S
