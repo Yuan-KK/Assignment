@@ -33,5 +33,5 @@ df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
 df = df.reset_index().rename(columns = {'index':'k-num'})
 df.sort_values("Fre",inplace=True,ascending=False)
 df['%'] = df["Fre"] / df["Fre"].sum() * 100
-with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\O157dinulc.csv",'w+',newline='') as nf:
+with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\di-O157dinulc.csv",'w+',newline='') as nf:
     df.to_csv(nf,index=False)
