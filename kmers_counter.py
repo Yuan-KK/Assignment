@@ -1,12 +1,14 @@
+from numpy import ERR_DEFAULT
 import pandas as pd
 from itertools import islice
 import tempfile
 import argparse
 
-parser = argparse.ArgumentParser(usage='python kmers_counter.py -k <int> -i read.fasta [-o output.csv]')
+parser = argparse.ArgumentParser(usage='python kmers_counter.py -k <int> -i read.fasta -o output.csv')
 parser.add_argument("-k","--kmer",type=int,metavar='',required=True,help="Set the length of k-mer")
-parser .add_argument("-i","--input",type=str,metavar='',required=True,help="Input .fasta file")
-parser.add_argument("-o","--output",type=str,metavar='',default='output.csv',help="Output .csv file")
+parser .add_argument("-i","--input",type=str,metavar='',required=True,help="Input a .fasta file")
+parser.add_argument("-o","--output",type=str,metavar='',default='output.csv',help="Output a .csv file")
+# parser.add_argument("--hist",type=str,metavar='',default='hist.png',help="Output a histogram")
 args = parser.parse_args()
 
 k = args.kmer
@@ -16,34 +18,25 @@ with open(args.input,'r') as f1:
             line=line.strip('\n')
             f2.writelines(line)
         f2.seek(0)
-        line=f2.read()
-        dna_seq = list(line)
+        dna_seq=f2.read()
 
-kmers = []
+kmers = { }
 i = 0 
 while i <= len(dna_seq)-k:
     j = i + k
     di = dna_seq[i:j]
-    di = ''.join(di)
-    kmers.append(di)
+    if di not in kmers.keys():
+        kmers[di] = 1
+    if di in kmers.keys():
+        kmers[di] += 1
     i += 1 
     if i > len(dna_seq)-k:
         break
 
-df = pd.value_counts(kmers)
-df = pd.DataFrame({'k-num':df.index, 'Fre':df.values})
-
-fre = df['Fre'].tolist()
-a = 0 
-for i in fre:
-    a += i
-fre = df['Fre'].tolist()
-per = []
-for f in fre:
-    f /= a
-    f *= 100
-    per.append(f)
-df['%'] = per
+df = pd.DataFrame([kmers])
+df = pd.DataFrame(df.values.T, index=df.columns, columns=['Fre'])
+df.sort_values("Fre",inplace=True,ascending=False)
+df['%'] = df["Fre"] / df["Fre"].sum() * 100
 
 with open(args.output,'w+',newline='') as nf:
     df.to_csv(nf,index=False)
