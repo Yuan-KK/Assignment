@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 import argparse
-from func import fastalist
+from func import fastaline
 from func import kmersset
 
 parser = argparse.ArgumentParser(usage='python minhash.py -k <int> -t <int> -i "read1.fasta read2.fasta ..." [-o output.png]')
@@ -20,7 +20,7 @@ for i in range(l):
     a = data[i].split('.')[0]
     alist.append(a)
 for i in range(l):
-    S_dic[alist[i]]=kmersset(fastalist(data[i]),k)
+    S_dic[alist[i]]=kmersset(fastaline(data[i]),k)
 u_S = set()
 for i in range(l):
     u_S = u_S | S_dic[alist[i]]
