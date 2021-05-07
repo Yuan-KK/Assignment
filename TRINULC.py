@@ -5,38 +5,33 @@
 
 from itertools import islice
 import pandas as pd
+import tempfile
 
-dna_seq = []
 k= 3
 with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\EcoliO157.fasta','r') as f1:
-    for line in islice(f1, 1, None):
-        line=line.strip('\n')
-        dna_seq = dna_seq + list(line)
-k3 = []
+    with tempfile.TemporaryFile(mode='r+t') as f2:
+        for line in islice(f1, 1, None):
+            line=line.strip('\n')
+            f2.writelines(line)
+        f2.seek(0)
+        dna_seq=f2.read()
+kmers = { }
 i = 0 
 while i <= len(dna_seq)-k:
     j = i + k
-    di = dna_seq[i:j]
-    di = ''.join(di)
-    k3.append(di)
+    tri = dna_seq[i:j]
+    if tri not in kmers.keys():
+        kmers[tri] = 1
+    if tri in kmers.keys():
+        kmers[tri] += 1
     i += 1 
     if i > len(dna_seq)-k:
         break
 
-df = pd.value_counts(k3)
-df = pd.DataFrame({'tri-num':df.index, 'Fre':df.values})
-print(df)
-fre = df['Fre'].tolist()
-a = 0 
-for i in fre:
-    a += i
-print(fre)
-fre = df['Fre'].tolist()
-per = []
-for f in fre:
-    f /= a
-    f *= 100
-    per.append(f)
-df['%'] = per
-with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\5-O157trinulc.csv",'w+',newline='') as nf:
+df = pd.DataFrame([kmers])
+df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
+df = df.reset_index().rename(columns = {'index':'k-num'})
+df.sort_values("Fre",inplace=True,ascending=False)
+df['%'] = df["Fre"] / df["Fre"].sum() * 100
+with open(r"C:\Users\admin\Desktop\rotation\Python_assignment\tri-O157trinulc.csv",'w+',newline='') as nf:
     df.to_csv(nf,index=False)
