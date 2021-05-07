@@ -7,7 +7,6 @@ from itertools import islice
 import pandas as pd
 import tempfile
 
-dna_seq = []
 k= 2
 with open(r'C:\Users\admin\Desktop\rotation\Python_assignment\EcoliO157.fasta','r') as f1:
     with tempfile.TemporaryFile(mode='r+t') as f2:
