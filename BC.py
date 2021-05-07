@@ -1,6 +1,6 @@
 import pandas as pd
 import argparse
-from func import fastalist
+from func import fastaline
 from func import kmercounter
 from func import BCd
 parser = argparse.ArgumentParser(usage='python BC.py -k <int> -i "read1.fasta read2.fasta ..." [-o output.png]')
@@ -17,7 +17,7 @@ for i in range(l):
     a = data[i].split('.')[0]
     alist.append(a)
 for i in range(l):
-    df_dic[alist[i]]=pd.DataFrame(kmercounter(fastalist(data[i]),k))
+    df_dic[alist[i]]=pd.DataFrame(kmercounter(fastaline(data[i]),k))
 
 df = pd.merge(df_dic[alist[0]],df_dic[alist[1]],on='k-num',how='outer')
 i = 2
