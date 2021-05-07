@@ -35,9 +35,7 @@ while i <= len(dna_seq)-k:
 df = pd.DataFrame([kmers])
 df = pd.DataFrame.from_dict(kmers, orient='index',columns=['Fre'])
 df = df.reset_index().rename(columns = {'index':'k-num'})
-print(df)
 df.sort_values("Fre",inplace=True,ascending=False)
-print(df)
 df['%'] = df["Fre"] / df["Fre"].sum() * 100
 
 with open(args.output,'w+',newline='') as nf:
