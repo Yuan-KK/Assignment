@@ -1,5 +1,4 @@
 from itertools import islice
-from pandas import DataFrame
 import tempfile
 import argparse
 codon = {'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
@@ -31,8 +30,7 @@ with open(args.input,'r') as f1:
             line=line.strip('\n')
             f2.writelines(line)
         f2.seek(0)
-        line=f2.read()
-        dna_seq = list(line)
+        dna_seq=f2.read()
         
 k= 3
 kmers = []
@@ -41,7 +39,6 @@ i = 0
 while i <= len(dna_seq)-k:
     j = i + k
     di = dna_seq[i:j]
-    di = ''.join(di)
     kmers.append(di)
     if di == 'ATG':
         start.append(i)
@@ -53,7 +50,6 @@ for l in start:
     while l <= len(dna_seq)-k:
         n = l + k
         tri = dna_seq[l:n]
-        tri = ''.join(tri)
         l = l + 3 
         for key,value in codon.items():
             tri= tri.replace(key,value)
