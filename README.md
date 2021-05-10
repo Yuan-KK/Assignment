@@ -130,8 +130,12 @@ optional arguments:
 
 In order to get an accurate comparison result, it is essential to choose an appropriate value of *k*. If the *k* value is too small, such as 2, or too large, such as 21, the result will be inaccurate.
 
-***K*=21, MinHash**
+***K*=21, t=100, MinHash**
 
-![JS k=12](https://gitee.com/yuan-keke/runoob-test/raw/master/20210506151125.png)
+![JS k=12 t=100](https://gitee.com/yuan-keke/runoob-test/raw/master/20210506151125.png)
 
-MinHash is not suitable for situations where the *k* value is too small or the genomes with low similarity.
+***K*=21, t=1000, MinHash**
+
+![JS k=12 t=1000](https://gitee.com/yuan-keke/runoob-test/raw/master/20210510112548.png)
+
+MinHash is not suitable for situations where the *k* value is too small. If genomes with low similarity.
