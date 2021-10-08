@@ -7,7 +7,7 @@ This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers
   - [Bray–Curtis dissimilarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#51-braycurtis-dissimilarity)
   - [MinHash](https://github.com/Yuan-KK/Assignment/blob/main/README.md#52-minhash)
 # 1.Count the base number.
-[`Length.py`](https://github.com/Yuan-KK/Assignment/blob/main/LENGTH.py) is the program to count how many DNA bases in a `.fasta` file.
+[`Length.py`](https://github.com/Yuan-KK/Assignment/blob/main/LENGTH.py) is a program to count how many DNA bases in a `.fasta` file.
 
 **Usage:**
 ```sh
@@ -19,14 +19,14 @@ $ python LENGTH.py -i ~/python/test/EcoliK12.fasta
 4641652
 ```
 # 2.Get the complementary strand.
-`COMPLEMENT.py` is the program to output the complementary strand of the DNA sequence.
+`COMPLEMENT.py` is a program to output the complementary strand of the DNA sequence.
 
 **Usage:**
 ```sh
 python COMPLEMENT.py -i read.fasta [-o output.txt]
 ```
 # 3.Translate the DNA sequence.
-`TRANSLATE.py` is the program to translate a DNA sequence to a protein sequence using the standard codon table.
+`TRANSLATE.py` is a program to translate a DNA sequence to a protein sequence using the standard codon table.
 
 **Usage:**
 ```sh
