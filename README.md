@@ -1,7 +1,7 @@
 This is a *k*-mer counter toolkit that can be used to analyze and compare k-mers produced from genomes. It includes these functions as follows:
-- [Count the base number](https://github.com/Yuan-KK/Assignment/blob/main/README.md#1count-the-base-number)
+- [Compute the length of a DNA sequence](https://github.com/Yuan-KK/Assignment/blob/main/README.md#1count-the-base-number)
 - [Get the complementary strand](https://github.com/Yuan-KK/Assignment/blob/main/README.md#2get-the-complementary-strand)
-- [Translate the DNA sequence](https://github.com/Yuan-KK/Assignment/blob/main/README.md#3translate-the-dna-sequence)
+- [Translation](https://github.com/Yuan-KK/Assignment/blob/main/README.md#3translate-the-dna-sequence)
 - [*K*-mer counter](https://github.com/Yuan-KK/Assignment/blob/main/README.md#4k-mer-counter)
 - [Compare genome similarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#5compare-genome-similarity)
   - [Bray–Curtis dissimilarity](https://github.com/Yuan-KK/Assignment/blob/main/README.md#51-braycurtis-dissimilarity)
@@ -25,7 +25,7 @@ $ python LENGTH.py -i ~/python/test/EcoliK12.fasta
 ```sh
 python COMPLEMENT.py -i read.fasta [-o output.txt]
 ```
-# 3.Translate the DNA sequence.
+# 3.Translation.
 `TRANSLATE.py` is a program to translate a DNA sequence to a protein sequence using the standard codon table.
 
 **Usage:**
